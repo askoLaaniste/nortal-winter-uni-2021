@@ -11,8 +11,10 @@ public class Ex1 {
 
 		MovieService movieService = MovieService.getInstance();
 		Collection<Movie> movies = movieService.findAllMovies();
-
 		// Solution
+		movies.stream()
+			.filter(m -> m.getYear() < 2000)
+			.forEach(System.out::println);
 
 	}
 }
